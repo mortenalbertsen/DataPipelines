@@ -17,7 +17,7 @@ Technologies employed
     - one for the AirFlow application / server (always needed) - the "airflow database"
       This database only holds data used to support AirFlow - data going in and out of workflows are *not* to be persisted in this database.
     - (optional, depending on need of workflow) another database for data-storage / manipulation, to be used by workflow tasks - the "data database". 
-- AirFlow provides a `MySQLOperator`; that operator allows you to run sql-queries against the "data-database". I suggest one forgets about and/or does *not* use `MySQLOperator` to interact with the database, but rather use an ORM, for instance [PonyORM](https://docs.ponyorm.org). 
+- AirFlow provides a `MySQLOperator`; that operator allows you to run sql-queries against the "data-database". I suggest one forgets about the eixstence of and/or does *not* use `MySQLOperator` to interact with the database, but rather use an ORM, for instance [PonyORM](https://docs.ponyorm.org). 
 
 
 
@@ -100,6 +100,7 @@ export AIRFLOW_GPL_UNIDECODE=yes
 pip install apache-airflow
 pip install mysql-connector-python
 pip install pony
+pip install PyMySQL
 ```
 
 
