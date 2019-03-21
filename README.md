@@ -10,6 +10,18 @@ Technologies employed
 
 
 
+## Current progress
+
+- Ingestion of raw data into database
+  - Currently bothered by a unicode-parsing error when ingesting csv-file
+- Transformation of data into desired format
+  - Implementation not begun
+- 
+
+
+
+
+
 ## Realize the following - and avoid frustration!
 
 - The database used by AirFlow (in-memory or persisted) backs AirFlow itself, *but has nothing to do with the storage of the (if any) data-tasks carried out by workflows managed by AirFlow*.
