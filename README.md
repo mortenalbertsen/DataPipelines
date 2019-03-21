@@ -12,12 +12,12 @@ Technologies employed
 
 ## Realize the following - and avoid frustration!
 
-- The database used by AirFlow (in-memory or persisted) backs AirFlow itself, *but has nothing to do with the storage of the (if any) data-tasks carried out by workflows managed by AirFlow*.
+- The database used by AirFlow (in-memory or persisted) backs AirFlow itself, *but has nothing to do with the storage of the input to / output of the the data-tasks (if any) carried out by workflows managed by AirFlow*.
   - Hence, if one plans to setup workflows that persists data to a database, two separate / unrelated databases should come into play:
     - one for the AirFlow application / server (always needed) - the "airflow database"
-      This database only holds data used to support AirFlow - data going in and out of workflows are *not* to be persisted in this database.
+      This database only holds data used to support AirFlow - data going in and out of workflows is *not* to be persisted in this database.
     - (optional, depending on need of workflow) another database for data-storage / manipulation, to be used by workflow tasks - the "data database". 
-- AirFlow provides a `MySQLOperator`; that operator allows you to run sql-queries against the "data-database". I suggest one forgets about the eixstence of and/or does *not* use `MySQLOperator` to interact with the database, but rather use an ORM, for instance [PonyORM](https://docs.ponyorm.org). 
+- AirFlow provides a `MySQLOperator`; that operator allows you to run sql-queries against the "data-database". I suggest one forgets about the eixstence of and/or does *not* use `MySQLOperator` to interact with the database, but rather use an ORM, for instance [PonyORM](https://docs.ponyorm.org), to interact with the database. 
 
 
 
@@ -63,7 +63,7 @@ Essential steps
    airflow initdb
    ```
 
-   Verify that `AirFlowSupport` now holds multiple tables. 
+   Verify that `AirFlowSupport` database now holds multiple tables. 
 
 
 
@@ -85,9 +85,7 @@ TODO!
 
 ## Create database for data storage / manipulation
 
-```bash
-
-```
+TODO!
 
 
 
