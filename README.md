@@ -25,9 +25,12 @@ average “review_overall”)*
   - Currently bothered by a unicode-parsing error when ingesting csv-file
 - Transformation of data into desired format
   - Implementation not begun
-- 
 
 
+
+## Current issues
+
+- During import memory consumption increases monotonically to about ~4 GB. 
 
 
 
@@ -55,6 +58,16 @@ unzip beer_reviews.csv.zip
 ```
 
 
+
+### Learnings on dataset
+
+- The following fields cannot be assumed to be present in dataset
+
+  - `brewery_name`
+  - `beer_abv`
+  - `profile_name`
+
+  
 
 ## Create database to back AirFlow application
 
@@ -121,6 +134,7 @@ pip install apache-airflow
 pip install mysql-connector-python
 pip install pony
 pip install PyMySQL
+pip ist
 ```
 
 
